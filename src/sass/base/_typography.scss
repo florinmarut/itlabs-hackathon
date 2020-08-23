@@ -1,0 +1,113 @@
+.heading-primary {
+    font-size: 9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    line-height: 1.2;
+    padding-bottom: 1rem;
+
+    &--main {
+        color: $color-grey-dark;
+
+        & span {
+            &::before {
+                color:  $color-tertiary;
+                text-transform: none;
+                content: "${\`";
+            }
+            &::after {
+                color: $color-tertiary;
+                content: "\`}";
+            }
+        }
+    }
+
+    @include respond(br2) {
+        letter-spacing: .2rem;
+        font-size: 8rem;
+    }
+
+    @include respond(br3) {
+        letter-spacing: 0;
+        font-size: 7rem;
+    }
+
+    @include respond(br4) {
+        letter-spacing: 0;
+        font-size: 6rem;
+        padding-bottom: 3rem;
+    }
+
+    @include respond(br5) {
+        letter-spacing: 0;
+        font-size: 4.5rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.span {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.4rem;
+
+    &--main {
+        color:  $color-tertiary;
+
+        &::before {
+            color:  $color-grey-dark;
+            //text-transform: none;
+            content: "const motto = \"";
+        }
+        &::after {
+            color: $color-grey-dark;
+            content: "\";";
+        }
+    }
+    
+}
+
+.heading-secondary {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    line-height: 1.2;
+    padding-bottom: 2rem;
+
+    &--grey-dark {
+        color: $color-grey-dark;
+    }
+
+    @include respond(br2) {
+        letter-spacing: .1rem;
+        font-size: 2.8rem;
+    }
+
+    @include respond(br4) {
+        letter-spacing: 0;
+        font-size: 2.5rem;
+        padding-bottom: 1rem;
+    }
+
+    @include respond(br5) {
+        font-size: 2rem;
+    }
+}
+
+.heading-tertiary {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    padding-bottom: .5rem;
+
+    &--grey-dark {
+        color: $color-grey-dark;
+    }
+}
+
+.paragraph {
+    font-size: 1.8rem;
+    font-weight: 300;
+}

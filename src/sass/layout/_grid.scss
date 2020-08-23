@@ -1,0 +1,84 @@
+.row {
+    width: 100%;
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 0 5rem;
+
+    @include respond(br4) {
+        max-width: 100%;
+    }
+
+    @include respond(br5){
+        padding: 0 1.5rem;
+        
+    }
+
+    &--respond {
+        @include respond(br4) {
+            max-width: 60rem;
+        }
+    
+        @include respond(br5){
+            max-width: 100%;
+        }
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    row-gap: 5rem;
+    column-gap: 5rem;
+
+    &:not(:last-of-type) {
+        margin-bottom: 5rem;
+    }
+
+    @include respond(br4) {
+        column-gap: 0;
+    }
+
+    @include respond(br5){
+        column-gap: 0;
+        row-gap: 3rem;
+    }
+
+    &__2 {
+        grid-column: span 2;
+    }
+    &__3 {
+        grid-column: span 3;
+    }
+    &__4 {
+        grid-column: span 4;
+    }
+    &__6 {
+        grid-column: span 6;
+    }
+    &__8 {
+        grid-column: span 8;
+    }
+    &__9 {
+        grid-column: span 9;
+    }
+    &__10 {
+        grid-column: span 10;
+    }
+    &__12 {
+        grid-column: span 12;
+    }
+    
+    &__2,
+    &__3,
+    &__4,
+    &__6,
+    &__8,
+    &__9,
+    &__10,
+    &__12 {
+        @include respond(br4) {
+            grid-column: span 12;
+        }
+    }
+}

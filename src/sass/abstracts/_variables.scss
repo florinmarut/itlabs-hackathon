@@ -1,0 +1,45 @@
+$color-primary: rgb(69, 90, 164);
+$color-secondary: rgb(123, 188, 232);
+$color-tertiary: rgb(237, 125, 38);
+
+$color-grey: rgb(90, 90, 90);
+$color-grey-2: rgb(160, 160, 160);
+
+$color-grey-footer: rgb(170, 170, 170);
+
+$color-grey-dark: rgb(60, 60, 60);
+$color-grey-dark-2: rgb(30, 30, 30);
+
+$color-grey-light-1: rgb(250, 250, 250);
+$color-grey-light-2: rgb(240, 240, 240);
+$color-grey-light-3: rgb(200, 200, 200);
+
+$sd: 576px;
+$md: 768px;
+$ld: 992px;
+$xd: 1200px; 
+
+$font-1: 'Nunito Sans', sans-serif;
+
+// insert them in root also for js
+:root {
+    
+    --color-primary: rgb(69, 90, 164);
+    --color-secondary: rgb(123, 188, 232);
+    --color-tertiary: rgb(237, 125, 38);
+    --color-grey-dark: rgb(26, 26, 26);
+
+    --color-grey: rgb(90, 90, 90);
+    --color-grey-2: rgb(160, 160, 160);
+
+    --color-grey-footer: rgb(170, 170, 170);
+
+    --color-grey-dark: rgb(60, 60, 60);
+    --color-grey-dark-2: rgb(30, 30, 30);
+
+    --color-grey-light-1: rgb(250, 250, 250);
+    --color-grey-light-2: rgb(240, 240, 240);
+    --color-grey-light-3: rgb(200, 200, 200);
+
+    --font-1: 'Nunito Sans', sans-serif;
+}

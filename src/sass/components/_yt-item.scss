@@ -1,0 +1,76 @@
+.yt-item {
+    display: grid;
+    column-gap: 5rem;
+    grid-template-columns: repeat(12, 1fr);
+
+    & > * {
+        grid-row: 1 / 2;
+    }
+
+    &:not(:last-of-type) {
+        padding-bottom: 5rem;
+    }
+
+    &:nth-of-type(odd) {grid-template-columns: 8fr 4fr;}
+    &:nth-of-type(even) {grid-template-columns: 4fr 8fr;}
+ 
+    @include respond(br4) {
+        grid-template-columns: 100% !important;
+
+        & > * {
+            grid-column: unset !important;
+            grid-row: unset !important;
+        }
+    }
+    
+    &:nth-of-type(odd) &__video {grid-column: 1 / 2;}
+    &:nth-of-type(even) &__video {grid-column: 2 / 3;}
+
+    &:nth-of-type(odd) &__container {grid-column: 2 / 3;}
+    &:nth-of-type(even) &__container {grid-column: 1 / 2;}
+
+
+    .yt-item__video {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        
+        & iframe {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 800;
+        color: $color-primary;
+
+        @include respond(br4) {
+            margin-top: 2rem;
+            font-size: 2rem;
+        }
+    }
+
+    &__description {
+        font-size: 1.8rem;
+        font-weight: 300;
+        letter-spacing: .2rem;
+
+        @include respond(br4) {
+            font-size: 1.6rem;
+            letter-spacing: .1rem;
+        }
+    }
+
+}

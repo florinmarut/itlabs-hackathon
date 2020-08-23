@@ -1,0 +1,7 @@
+.splide__slide {
+    padding: 2.5rem;
+
+    @include respond(br4) {
+        padding: 1rem;
+    }
+}

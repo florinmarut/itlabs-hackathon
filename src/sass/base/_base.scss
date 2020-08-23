@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // Take care with these values
+    font-size: 62.5%;
+
+    @include respond(br1){
+        font-size: 56.25%;
+    }
+    @include respond(br3){
+        font-size: 53%;
+    }
+}
+
+// font-family: 'Nunito Sans', sans-serif;
+
+body {
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    font-family: 'Nunito Sans', sans-serif;
+
+    padding-top: 7rem;
+
+    @include respond(br1) {
+        padding-top: 6rem;
+    }
+}
+
+// ::selection {
+//     background-color: ;
+//     color: ;
+// }
+
+img.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.u-vpadding {
+    padding: 10rem 0;
+
+    @include respond(br4) {
+        padding: 5rem 0;
+    }
+}
+
+.color-section {
+    &--primary {background-color: $color-primary;}
+    &--secondary {background-color: $color-secondary;}
+    &--tertiary {background-color: $color-tertiary;}
+    &--grey-light {background-color: $color-grey-light-1;}
+}
+
+.u-flex {
+    display: flex;
+}
+.u-flex-align-center {
+    align-items: center;
+}
+.u-flex-justify-center {
+    justify-content: center;
+}

@@ -1,0 +1,36 @@
+.header {
+    width: 100%;
+    padding: 10rem 0;
+    
+    @include respond(br4) {
+        padding: 5rem 0;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+
+        @include respond(br4) {
+            max-width: 40rem;
+            margin: 0 auto;
+        }
+    }
+
+    & .row,
+    & .grid {
+        height: 100%;
+    }
+
+    & .grid > * {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include respond(br4) {
+            align-items: center;
+            text-align: center;
+        }
+    }
+}
+

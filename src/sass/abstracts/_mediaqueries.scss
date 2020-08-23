@@ -1,0 +1,17 @@
+@mixin responsive1($size){
+    @media (max-width: #{$size}){
+        @content;
+    }
+}
+
+@mixin responsive2($min, $max){
+    @media (min-width: #{$min}) and (max-width: #{$max}){
+        @content;
+    }
+}
+
+@mixin responsive3($size){
+    @media (min-width: #{$size}){
+        @content;
+    }
+}

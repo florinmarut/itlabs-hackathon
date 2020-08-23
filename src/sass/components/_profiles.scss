@@ -1,0 +1,127 @@
+.profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 35rem));
+    column-gap: 5rem;
+    row-gap: 5rem;
+    justify-content: center;
+
+    &__profile {
+        border-radius: .4rem;
+        overflow: hidden;
+        background-color: $color-grey-light-2;
+        -webkit-box-shadow: 0px 0.5rem 0.5rem 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 0.5rem 0.5rem 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0.5rem 0.5rem 0px rgba(0, 0, 0, 0.1);
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__image {
+        width: 100%;
+        height: 40rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url(../img/default.jpg);
+        position: relative;
+
+        &--ovidiu {
+            background-image: url(../img/ovidiu.jpg);
+        }
+
+        &--sorin {
+            background-image: url(../img/sorin.jpg);
+        }
+
+        &--alice {
+            background-image: url(../img/alice.jpg);
+        }
+
+        border-right: .5rem solid $color-primary;
+        border-bottom: .5rem solid $color-primary;
+    }
+
+    &__overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(-.5rem, -.5rem);
+        display: inline-block;
+        background-color: $color-primary;
+        padding: 1rem;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: right;
+    }
+
+    &__name {
+        font-size: 1.6rem;
+        font-weight: bold;
+        position: relative;
+        margin-bottom: .3rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -.1rem;
+            right: 0;
+            width: 20%;
+            height: .1rem;
+            background-color: #fff;
+        }
+    }
+
+    &__title {
+        font-size: 1.4rem;
+    }
+
+    &__container {
+        flex: 1;
+        padding: 1.5rem;
+        border-left: .5rem solid $color-primary;
+    }
+
+    &__description {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 1.4;
+        text-align: justify;
+    }
+
+    &__media {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    &__link {
+        &,
+        &:visited,
+        &:active,
+        &:focus {
+            display: inline-block;
+            background-color: $color-primary;
+            border-radius: 50%;
+            padding: .5rem;
+            line-height: 0;
+        }
+
+        &:hover {
+            background-color: $color-secondary;
+        }
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+        
+    }
+
+    &__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: #fff;
+    }
+}

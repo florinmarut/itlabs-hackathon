@@ -1,0 +1,126 @@
+.accordion {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-template-rows: min-content;
+    row-gap: 5rem;
+    column-gap: 5rem;
+
+    @include respond(br4) {
+        grid-template-columns: 100%;
+        grid-template-rows: 20rem auto;
+    }
+
+    &--primary & {
+        &__bar {
+            background-color: $color-primary;
+        }
+        &__heading {
+            color: #fff;
+        }
+        &__btn {
+            background-color: $color-grey-dark;
+            &::before,
+            &::after {
+                background-color: $color-grey-light-2;
+            }
+        }
+    }
+
+    &__img {
+        grid-column: 1 / 2;
+
+        @include respond(br4) {
+            grid-row: 1 / 2;
+        }
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &--1 {
+            background-image: url('../img/course.jpg');
+        }
+    }
+
+    &__content {
+        grid-column: 2 / 3;
+
+        @include respond(br4) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-of-type) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+    }
+    &__bar.active &__btn{
+        &::before,
+        &::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+
+    &__heading {
+        padding: 0 1.5rem;
+        flex: 1;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    &__btn {
+        height: 4rem;
+        width: 4rem;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: 50% 50%;
+            transform: translate(-50%, -50%) rotate(0);
+            transition: transform .2s;
+        }
+
+        &::before {
+            width: 50%;
+            height: .4rem;
+        }
+
+        &::after {
+            width: .4rem;
+            height: 50%;
+        }
+    }
+
+    &__aspect-ratio {
+        height: 100%;
+        width: auto;
+    }
+
+    &__content {
+        display: none;
+        padding: 2rem;
+        background-color: $color-grey-light-1;
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        font-weight: 300;
+    }
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="particleScreen"></canvas>
+    <nav class="nav">
+        <img title="IT-Labs" src="img/logo.png" alt="IT-Labs Logo" class="nav__logo">
+        <form class="search" action="">
+           <div class="search__before"><span>Search</span>{</div>
+           <input class="search__input" placeholder="..." name="query" id="">
+           <div class="search__after">}</div>
+        </form>
+        <div class="nav__button">
+           <div class="nav__burger"></div>
+           <div class="nav__burger"></div>
+           <div class="nav__burger"></div>
+        </div>
+        <ul class="nav__menu">
+           <li class="nav__item">
+              <a href="/" class="nav__link">Home</a>
+              <!-- <ul class="nav__sub-menu">
+                 <li class="nav__sub-item"><a href="#" class="nav__sub-link">Echipa</a></li>
+                 <li class="nav__sub-item"><a href="#" class="nav__sub-link">Certificari</a></li>
+                 <li class="nav__sub-item"><a href="#" class="nav__sub-link">Business</a></li>
+                 <li class="nav__sub-item"><a href="#" class="nav__sub-link">Contact</a></li>
+                 <li class="nav__sub-item"><a href="#" class="nav__sub-link">Ecosistemul IT-Labs</a></li>
+                 <li class="nav__sub-item"><a href="#" class="nav__sub-link">Parteneriate</a></li>
+              </ul> -->
+           </li>
+           <li class="nav__item">
+              <a href="/about" class="nav__link">About Us</a>
+           </li>
+           <li class="nav__item">
+              <a href="/event-details" class="nav__link">Event Details</a>
+           </li>
+           <li class="nav__item"><a href="/contact" class="nav__link">Contact</a></li>
+           <div class="nav__account">
+              <div class="languages">
+                 <div class="languages__active">
+                    <svg class="languages__chevron">
+                       <use xlink:href="img/sprite.svg#icon-chevron-down"></use>
+                    </svg>
+                    <svg class="languages__icon">
+                       <use xlink:href="img/sprite.svg#icon-ro"></use>
+                    </svg>
+                 </div>
+                 <div class="languages__dropdown">
+                    <a href="#" class="languages__link">
+                       <svg class="languages__icon">
+                          <use xlink:href="img/sprite.svg#icon-uk"></use>
+                       </svg>
+                    </a>
+                    <a href="#" class="languages__link">
+                       <svg class="languages__icon">
+                          <use xlink:href="img/sprite.svg#icon-ger"></use>
+                       </svg>
+                    </a>
+                    <a href="#" class="languages__link">
+                       <svg class="languages__icon">
+                          <use xlink:href="img/sprite.svg#icon-hu"></use>
+                       </svg>
+                    </a>
+                    <a href="#" class="languages__link">
+                       <svg class="languages__icon">
+                          <use xlink:href="img/sprite.svg#icon-srb"></use>
+                       </svg>
+                    </a>
+                 </div>
+              </div>
+              <div class="nav__log-in"><a href="/login" class="nav__log-in-btn">Log in</a></div>
+           </div>
+        </ul>
+     </nav>
+
+
+     <form class="login-form">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <input type="checkbox" id="remember-checkbox" name="remember-checkbox" value="Remember">
+        <label for="remember-checkbox">Remember me next time</label>
+        <input class="submit-button" type="submit" value="LOG IN">
+        <a href="#">Not having an account yet? Sign up here!</a>
+     </form>
+
+     <footer class="footer">
+      <div class="row">
+         <div class="grid">
+            <div class="grid__3"><img src="img/logo_white.png" alt="IT-Labs white and black logo" class="footer__logo"></div>
+            <div class="grid__9 footer__heading">IT LABS este o comunitate si un ansamblu de resurse pentru devenirea ta ca programator.</div>
+         </div>
+         <div class="grid">
+            <div class="grid__3 footer__filler"></div>
+            <div class="grid__3 footer__list">
+               <div class="footer__title">Contact</div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-map2"></use>
+                  </svg>
+                  <div class="footer__text">Str. Budai Deleanu nr. 13, Timișoara, România</div>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-phone"></use>
+                  </svg>
+                  <div class="footer__text">+40 728 433 466</div>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-phone"></use>
+                  </svg>
+                  <div class="footer__text">+40 356 800 009</div>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-mail-envelope-closed"></use>
+                  </svg>
+                  <div class="footer__text">contact@it-labs.ro</div>
+               </div>
+            </div>
+            <div class="grid__3 footer__list">
+               <div class="footer__title">Links</div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                  </svg>
+                  <a href="https://www.it-labs.ro" class="footer__link">IT Labs</a>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                  </svg>
+                  <a href="https://www.javabootcamp.net" class="footer__link">Java bootcamp</a>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                  </svg>
+                  <a href="https://python-bootcamp.net" class="footer__link">Python bootcamp</a>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                  </svg>
+                  <a href="https://cplusplus4.me" class="footer__link">C/C++ for me</a>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                  </svg>
+                  <a href="https://www.web-bootcamp.net" class="footer__link">Web bootcamp ?</a>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                  </svg>
+                  <a href="https://www.software-skills4.me" class="footer__link">Software skills for me</a>
+               </div>
+            </div>
+            <div class="grid__3 footer__list">
+               <div class="footer__title">Media</div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                  </svg>
+                  <a href="#" class="footer__link">Facebook</a>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-linkedin2"></use>
+                  </svg>
+                  <a href="#" class="footer__link">Linked in</a>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-whatsapp"></use>
+                  </svg>
+                  <a href="#" class="footer__link">Whatsapp</a>
+               </div>
+               <div class="footer__icon-box">
+                  <svg class="footer__icon">
+                     <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                  </svg>
+                  <a href="#" class="footer__link">Twitter</a>
+               </div>
+            </div>
+         </div>
+         <div class="grid">
+            <div class="grid__3 footer__filler"></div>
+            <div class="grid__6 footer__list">
+               <div class="footer__title">Newsletter</div>
+               <from class="footer__newsletter"><input type="email" class="footer__input"> <input type="submit" value="Subscribe" class="footer__submit"></from>
+               <div class="footer__text">Veti primi mailuri legate de activitatile noi ...</div>
+            </div>
+         </div>
+         <div class="grid">
+            <div class="grid__3 footer__filler"></div>
+            <div class="grid__9 footer__legal">Copyright IT Labs &copy; 2020 | Toate drepturile rezervate.</div>
+         </div>
+      </div>
+   </footer>
+   
+    <script src="js/bundle.js"></script>
+    <script src="js/canvas.js"></script>
+</body>
+</html>

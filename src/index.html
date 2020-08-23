@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <!-- LOGO -->
+        <img title="IT-Labs" src="img/logo.png" alt="IT-Labs Logo" class="nav__logo">
+
+        <!-- SEARCH compomemt -->
+        <form class="search" action="" method="get">
+            <div class="search__before"><span>Search</span>{</div>
+            <input class="search__input" placeholder="..." type="text" name="query" id="">
+            <div class="search__after">}</div>
+        </form>
+
+        <!-- MENU Button -->
+        <div class="nav__button">
+            <div class="nav__burger"></div>
+            <div class="nav__burger"></div>
+            <div class="nav__burger"></div>
+        </div>
+
+        <!-- MENU LINKS -->
+        <ul class="nav__menu">
+            <li class="nav__item">
+                <a href="#" class="nav__link">Despre IT-Labs</a>
+                <ul class="nav__sub-menu">
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Echipa</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Certificari</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Business</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Contact</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Ecosistemul IT-Labs</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Parteneriate</a></li>
+                </ul>
+            </li>
+            <li class="nav__item">
+                <a href="#" class="nav__link">Cursuri</a>
+                <ul class="nav__sub-menu">
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Python</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Java</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">C/C++</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Web Design</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Testare Software</a></li>
+                </ul>
+            </li>
+            <li class="nav__item">
+                <a href="#" class="nav__link">Ghidul Cursantului</a>
+                <ul class="nav__sub-menu">
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">FAQ</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Selectia cursantilor</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Mentori</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">HR Speed Dating</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Dezvoltare personala</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Dexter Lab</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Testimoniale</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Live classroom</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Training tools</a></li>
+                    <li class="nav__sub-item"><a href="#" class="nav__sub-link">Mentorat</a></li>
+                </ul>
+            </li>
+            <li class="nav__item">
+                <a href="#" class="nav__link">Blog</a>
+            </li>
+
+            <!-- ACCOUNT PREFERENCES -->
+            <div class="nav__account">
+                <div class="languages">
+                    <div class="languages__active">
+                        <svg class="languages__chevron">
+                            <use xlink:href="img/sprite.svg#icon-chevron-down"></use>
+                        </svg>
+                        <svg class="languages__icon">
+                            <use xlink:href="img/sprite.svg#icon-ro"></use>
+                        </svg>
+                    </div>
+
+                    <div class="languages__dropdown">
+                        <a href="#" class="languages__link">
+                            <svg class="languages__icon">
+                                <use xlink:href="img/sprite.svg#icon-uk"></use>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="languages__link">
+                            <svg class="languages__icon">
+                                <use xlink:href="img/sprite.svg#icon-ger"></use>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="languages__link">
+                            <svg class="languages__icon">
+                                <use xlink:href="img/sprite.svg#icon-hu"></use>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="languages__link">
+                            <svg class="languages__icon">
+                                <use xlink:href="img/sprite.svg#icon-srb"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav__log-in">
+                    <a href="#" class="nav__log-in-btn">Log in</a>
+                </div>
+
+            </div>
+        </ul>
+
+    </nav>
+
+    <header class="header">
+        <div class="row">
+            <div class="grid">
+                <div class="grid__6">
+                    <span class="span span--main">A goal without a plan is just a wish</span>
+                    <h1 class="heading-primary heading-primary--main">Cariera ta în <span>IT</span>.</h1>
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam animi qui
+                        voluptates id iste. Dignissimos natus repudiandae exercitationem architecto. Illo vitae harum ex
+                        corrupti, modi sapiente cumque eius. Recusandae, laborum?</p>
+                </div>
+                <div class="grid__6">
+                    <img class="header__img" src="img/circuits2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features color-section--grey-light u-vpadding">
+        <div class="row row--respond">
+            <h2 class="heading-secondary heading-secondary--grey-dark">Secondary heading</h2>
+
+            <div class="grid">
+                <div class="grid__4 grid-item">
+                    <div class="grid-item__circle grid-item__circle--1">
+                        <svg class="grid-item__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                    </div>
+                    <div class="grid-item__text">
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis cum
+                            deserunt placeat veritatis vero, odio, perferendis sed dignissimos exercitationem ratione
+                            eaque.</p>
+                    </div>
+                </div>
+                <div class="grid__4 grid-item">
+                    <div class="grid-item__circle grid-item__circle--2">
+                        <svg class="grid-item__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                    </div>
+                    <div class="grid-item__text">
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis cum
+                            deserunt placeat veritatis vero, odio, perferendis sed dignissimos exercitationem ratione
+                            eaque.</p>
+                    </div>
+                </div>
+                <div class="grid__4 grid-item">
+                    <div class="grid-item__circle grid-item__circle--3">
+                        <svg class="grid-item__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                    </div>
+                    <div class="grid-item__text">
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis cum
+                            deserunt placeat veritatis vero, odio, perferendis sed dignissimos exercitationem ratione
+                            eaque.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__4 grid-item">
+                    <div class="grid-item__circle grid-item__circle--2">
+                        <svg class="grid-item__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                    </div>
+                    <div class="grid-item__text">
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis cum
+                            deserunt placeat veritatis vero, odio, perferendis sed dignissimos exercitationem ratione
+                            eaque.</p>
+                    </div>
+                </div>
+                <div class="grid__4 grid-item">
+                    <div class="grid-item__circle grid-item__circle--3">
+                        <svg class="grid-item__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                    </div>
+                    <div class="grid-item__text">
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis cum
+                            deserunt placeat veritatis vero, odio, perferendis sed dignissimos exercitationem ratione
+                            eaque.</p>
+                    </div>
+                </div>
+                <div class="grid__4 grid-item">
+                    <div class="grid-item__circle grid-item__circle--1">
+                        <svg class="grid-item__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                    </div>
+                    <div class="grid-item__text">
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis cum
+                            deserunt placeat veritatis vero, odio, perferendis sed dignissimos exercitationem ratione
+                            eaque.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__4 grid-item">
+                    <div class="grid-item__circle grid-item__circle--3">
+                        <svg class="grid-item__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                    </div>
+                    <div class="grid-item__text">
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis cum
+                            deserunt placeat veritatis vero, odio, perferendis sed dignissimos exercitationem ratione
+                            eaque.</p>
+                    </div>
+                </div>
+                <div class="grid__4 grid-item">
+                    <div class="grid-item__circle grid-item__circle--1">
+                        <svg class="grid-item__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                    </div>
+                    <div class="grid-item__text">
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis cum
+                            deserunt placeat veritatis vero, odio, perferendis sed dignissimos exercitationem ratione
+                            eaque.</p>
+                    </div>
+                </div>
+                <div class="grid__4 grid-item">
+                    <div class="grid-item__circle grid-item__circle--2">
+                        <svg class="grid-item__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                    </div>
+                    <div class="grid-item__text">
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis cum
+                            deserunt placeat veritatis vero, odio, perferendis sed dignissimos exercitationem ratione
+                            eaque.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-vpadding color-section--primary">
+
+        <div class="timeline">
+            <div class="timeline__item">
+                <div class="timeline__container">
+                    <div class="timeline__text-box">
+                        <h3 class="heading-tertiary">Title 1</h3>
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatem
+                            dignissimos rem modi porro explicabo hic commodi aspernatur eos enim! Ex id vitae suscipit
+                            voluptatibus itaque quod vel esse at!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline__item">
+                <div class="timeline__container">
+                    <div class="timeline__text-box">
+                        <h3 class="heading-tertiary">Title 2</h3>
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatem
+                            dignissimos rem modi porro explicabo hic commodi aspernatur eos enim! Ex id vitae suscipit
+                            voluptatibus itaque quod vel esse at!</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="timeline__item">
+                <div class="timeline__container">
+                    <div class="timeline__text-box">
+                        <h3 class="heading-tertiary">Title 3</h3>
+                        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatem
+                            dignissimos rem modi porro explicabo hic commodi aspernatur eos enim! Ex id vitae suscipit
+                            voluptatibus itaque quod vel esse at!</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="u-vpadding echipa">
+        <div class="row">
+            <h2 class="heading-secondary heading-secondary--grey-dark">Intalneste echipa</h2>
+        </div>
+        <div class="row">
+            <div class="profiles">
+
+                <div class="profiles__profile">
+                    <div class="profiles__image profiles__image--ovidiu">
+                        <div class="profiles__overlay">
+                            <div class="profiles__name">Ovidiu Aritoni</div>
+                            <div class="profiles__title">Fondator, Trainer</div>
+                        </div>
+                    </div>
+                    <div class="profiles__container">
+                        <div class="profiles__description">
+                            Ovidiu Aritoni, lucrează din 2005 în dezvoltare software și invatămant superior. A lucrat în
+                            proiecte de cercetare europene, în cadrul Institului E-Austria, Universitatea de Vest și de
+                            asemenea în industria software, în Franța, Germania. Din 2014 este colaborator Americas
+                            Petrogas. Este pasionat de drumeții montane.
+                        </div>
+                        <div class="profiles__media">
+                            <a href="#" class="profiles__link">
+                                <svg class="profiles__icon">
+                                    <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                                </svg>
+                            </a>
+                            <a href="#" class="profiles__link">
+                                <svg class="profiles__icon">
+                                    <use xlink:href="img/sprite.svg#icon-linkedin2"></use>
+                                </svg>
+                            </a>
+                            <a href="#" class="profiles__link">
+                                <svg class="profiles__icon">
+                                    <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profiles__profile">
+                    <div class="profiles__image profiles__image--sorin">
+                        <div class="profiles__overlay">
+                            <div class="profiles__name">Sorin Chis</div>
+                            <div class="profiles__title">CoFondator, Software Developer</div>
+                        </div>
+                    </div>
+                    <div class="profiles__container">
+                        <div class="profiles__description">
+                            Chiș Sorin, creativ și inventiv, capabil să se adapteze la prioritățile în schimbare, cu
+                            interes pentru
+                            tehnologie. Pana in prezent are o experiență bogată în limbajul de programare Java cat și a
+                            dezvoltării de
+                            aplicații pe platforma Android. Pasionat de geografie și muzică buna.
+                        </div>
+                        <div class="profiles__media">
+                            <a href="#" class="profiles__link">
+                                <svg class="profiles__icon">
+                                    <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                                </svg>
+                            </a>
+                            <a href="#" class="profiles__link">
+                                <svg class="profiles__icon">
+                                    <use xlink:href="img/sprite.svg#icon-linkedin2"></use>
+                                </svg>
+                            </a>
+                            <a href="#" class="profiles__link">
+                                <svg class="profiles__icon">
+                                    <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profiles__profile">
+                    <div class="profiles__image profiles__image--alice">
+                        <div class="profiles__overlay">
+                            <div class="profiles__name">Alice Aritoni</div>
+                            <div class="profiles__title">Designer, Arhitect Stagiar</div>
+                        </div>
+                    </div>
+                    <div class="profiles__container">
+                        <div class="profiles__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum mollitia asperiores corporis
+                            officia beatae ipsa exercitationem in minus dicta tempora. Ex excepturi architecto ab beatae
+                            recusandae ratione voluptatem itaque sequi.
+                        </div>
+                        <div class="profiles__media">
+                            <a href="#" class="profiles__link">
+                                <svg class="profiles__icon">
+                                    <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                                </svg>
+                            </a>
+                            <a href="#" class="profiles__link">
+                                <svg class="profiles__icon">
+                                    <use xlink:href="img/sprite.svg#icon-linkedin2"></use>
+                                </svg>
+                            </a>
+                            <a href="#" class="profiles__link">
+                                <svg class="profiles__icon">
+                                    <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="cursuri" class="u-vpadding">
+        <div class="row row--fluid">
+            <!-- Slider -->
+            <div class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+
+                        <li class="splide__slide">
+                            <!-- Course component -->
+                            <div class="course">
+                                <img src="img/course.jpg" alt="" class="course__img">
+                                <div class="course__duration">
+                                    <svg class="course__icon">
+                                        <use xlink:href="img/sprite.svg#icon-stopwatch"></use>
+                                    </svg>
+                                    <div class="course__time">2.5 ore</div>
+                                </div>
+                                <div class="course__title">Titlul cursului</div>
+                                <div class="course__description">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime aspernatur
+                                    voluptatem minima, minus nihil eos vitae. Molestiae dicta labore ratione eveniet
+                                    ducimus illum dolor ab. Cum alias aliquam atque similique.
+                                </div>
+                            </div>
+                            <!-- END Course component -->
+                        </li>
+                        <li class="splide__slide">
+                            <!-- Course component -->
+                            <div class="course">
+                                <img src="img/course.jpg" alt="" class="course__img">
+                                <div class="course__duration">
+                                    <svg class="course__icon">
+                                        <use xlink:href="img/sprite.svg#icon-stopwatch"></use>
+                                    </svg>
+                                    <div class="course__time">2.5 ore</div>
+                                </div>
+                                <div class="course__title">Titlul cursului</div>
+                                <div class="course__description">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime aspernatur
+                                    voluptatem minima, minus nihil eos vitae. Molestiae dicta labore ratione eveniet
+                                    ducimus illum dolor ab. Cum alias aliquam atque similique.
+                                </div>
+                            </div>
+                            <!-- END Course component -->
+                        </li>
+                        <li class="splide__slide">
+                            <!-- Course component -->
+                            <div class="course">
+                                <img src="img/course.jpg" alt="" class="course__img">
+                                <div class="course__duration">
+                                    <svg class="course__icon">
+                                        <use xlink:href="img/sprite.svg#icon-stopwatch"></use>
+                                    </svg>
+                                    <div class="course__time">2.5 ore</div>
+                                </div>
+                                <div class="course__title">Titlul cursului</div>
+                                <div class="course__description">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime aspernatur
+                                    voluptatem minima, minus nihil eos vitae. Molestiae dicta labore ratione eveniet
+                                    ducimus illum dolor ab. Cum alias aliquam atque similique.
+                                </div>
+                            </div>
+                            <!-- END Course component -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END Slider -->
+        </div>
+    </section>
+
+    <section class="u-vpadding">
+        <div class="row">
+
+            <div class="accordion accordion--primary">
+
+                <div class="accordion__img accordion__img--1"></div>
+
+                <div class="accordion__container">
+                    <div class="accordion__item">
+                        <div class="accordion__bar">
+                            <div class="accordion__heading">Heading goes here</div>
+                            <div class="accordion__btn"></div>
+                        </div>
+                        <div class="accordion__content">
+                            <div class="accordion__text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At facilis magni pariatur
+                                corrupti alias tenetur dolorum earum quasi doloremque assumenda temporibus repellendus
+                                optio blanditiis, asperiores itaque! Vitae impedit non atque?
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque harum dolor sint id
+                                distinctio sapiente, beatae doloribus, repellat cumque amet tempora voluptatum tenetur
+                                est quae similique nemo architecto deleniti porro.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat animi reiciendis sunt
+                                neque eaque consectetur eum aspernatur illum reprehenderit modi veniam error, omnis
+                                perferendis recusandae. Quo veritatis architecto incidunt inventore.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion__item">
+                        <div class="accordion__bar">
+                            <div class="accordion__heading">Heading goes here</div>
+                            <div class="accordion__btn"></div>
+                        </div>
+                        <div class="accordion__content">
+                            <div class="accordion__text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At facilis magni pariatur
+                                corrupti alias tenetur dolorum earum quasi doloremque assumenda temporibus repellendus
+                                optio blanditiis, asperiores itaque! Vitae impedit non atque?
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion__item">
+                        <div class="accordion__bar">
+                            <div class="accordion__heading">Heading goes here</div>
+                            <div class="accordion__btn"></div>
+                        </div>
+                        <div class="accordion__content">
+                            <div class="accordion__text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At facilis magni pariatur
+                                corrupti alias tenetur dolorum earum quasi doloremque assumenda temporibus repellendus
+                                optio blanditiis, asperiores itaque! Vitae impedit non atque?
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion__item">
+                        <div class="accordion__bar">
+                            <div class="accordion__heading">Heading goes here</div>
+                            <div class="accordion__btn"></div>
+                        </div>
+                        <div class="accordion__content">
+                            <div class="accordion__text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At facilis magni pariatur
+                                corrupti alias tenetur dolorum earum quasi doloremque assumenda temporibus repellendus
+                                optio blanditiis, asperiores itaque! Vitae impedit non atque?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Implementation of circuit component -->
+    <section id="circuit0" class="circuit">
+
+        <div class="circuit__background"></div>
+
+        <!-- canvas sibling that will be under the content -->
+        <canvas class="circuit__canvas"></canvas>
+
+        <!-- This wraps everything -->
+        <div class="circuit__overlay u-flex u-flex-align-center u-flex-justify-center">
+            
+            <img class="responsive" style="max-width: 500px;" src="img/logo.png" alt="Logo IT-Labs">
+
+        </div>
+    </section>
+
+
+    <section class="u-vpadding">
+        <div class="row">
+            
+            <div class="yt-item">
+                <div class="yt-item__video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Mw7uxQkeO1M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="yt-item__container">
+                    <div class="yt-item__title">BOBOCEA CĂTALIN</div>
+                    <div class="yt-item__description">STUDENT, FACULTATEA DE MATEMATICĂ-INFORMATICĂ, TIMIȘOARA</div>
+                </div>
+            </div>
+
+            <div class="yt-item">
+                <div class="yt-item__video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Mw7uxQkeO1M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="yt-item__container">
+                    <div class="yt-item__title">BOBOCEA CĂTALIN</div>
+                    <div class="yt-item__description">STUDENT, FACULTATEA DE MATEMATICĂ-INFORMATICĂ, TIMIȘOARA</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="row">
+
+            <div class="grid">
+                <div class="grid__3">
+                    <img src="img/logo_white.png" alt="IT-Labs white and black logo" class="footer__logo">
+                </div>
+                <div class="grid__9 footer__heading">
+                    IT LABS este o comunitate si un ansamblu de resurse pentru devenirea ta ca programator.
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__3 footer__filler"></div>
+
+                <div class="grid__3 footer__list">
+                    <div class="footer__title">Contact</div>
+
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-map2"></use>
+                        </svg>
+                        <div class="footer__text">Str. Budai Deleanu nr. 13, Timișoara, România</div>
+                    </div>
+
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-phone"></use>
+                        </svg>
+                        <div class="footer__text">+40 728 433 466</div>
+                    </div>
+
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-phone"></use>
+                        </svg>
+                        <div class="footer__text">+40 356 800 009</div>
+                    </div>
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-mail-envelope-closed"></use>
+                        </svg>
+                        <div class="footer__text">contact@it-labs.ro</div>
+                    </div>
+                </div>
+
+                <div class="grid__3 footer__list">
+                    <div class="footer__title">Links</div>
+
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                        <a href="https://www.it-labs.ro" class="footer__link">IT Labs</a>
+                    </div>
+
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                        <a href="https://www.javabootcamp.net" class="footer__link">Java bootcamp</a>
+                    </div>
+
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                        <a href="https://python-bootcamp.net" class="footer__link">Python bootcamp</a>
+                    </div>
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                        <a href="https://cplusplus4.me" class="footer__link">C/C++ for me</a>
+                    </div>
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                        <a href="https://www.web-bootcamp.net" class="footer__link">Web bootcamp ?</a>
+                    </div>
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-embed2"></use>
+                        </svg>
+                        <a href="https://www.software-skills4.me" class="footer__link">Software skills for me</a>
+                    </div>
+                </div>
+
+                <div class="grid__3 footer__list">
+                    <div class="footer__title">Media</div>
+
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                        </svg>
+                        <a href="#" class="footer__link">Facebook</a>
+                    </div>
+
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-linkedin2"></use>
+                        </svg>
+                        <a href="#" class="footer__link">Linked in</a>
+                    </div>
+
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-whatsapp"></use>
+                        </svg>
+                        <a href="#" class="footer__link">Whatsapp</a>
+                    </div>
+                    <div class="footer__icon-box">
+                        <svg class="footer__icon">
+                            <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                        </svg>
+                        <a href="#" class="footer__link">Twitter</a>
+                    </div>
+                </div>
+
+            </div>
+            <!--END GRID-->
+
+            <div class="grid">
+                <div class="grid__3 footer__filler"></div>
+                <div class="grid__6 footer__list">
+                    <div class="footer__title">Newsletter</div>
+                    <from class="footer__newsletter">
+                        <input type="email" class="footer__input">
+                        <input type="submit" value="Subscribe" class="footer__submit">
+                    </from>
+                    <div class="footer__text">Veti primi mailuri legate de activitatile noi ...</div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="grid__3 footer__filler"></div>
+                <div class="grid__9 footer__legal">
+                    Copyright IT Labs &copy; 2020 | Toate drepturile rezervate.
+                </div>
+            </div>
+        </div>
+        <!--END ROW-->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+</body>
+
+</html>
