@@ -1,0 +1,47 @@
+.details-wrapper{
+    font-family: 'Roboto', sans-serif;
+
+    .event-details-section{
+        background-color: #EFEFED;
+        height: 600px;
+        width: 100%;
+        padding: 50px 0;
+        position: relative;
+        text-align: center;
+        z-index: -1;
+    
+        .img-bg{
+            position: absolute;
+            height: auto;
+            width: 100%;
+            bottom: -10%;
+            left: 0;
+            z-index: -2;
+        }
+
+        h1{
+            text-transform: uppercase;
+        }
+    
+        p{
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 1.6;
+            margin: 5rem 5rem 0;
+        }
+    }
+}
+
+
+
+@include responsive2($md, $ld){
+    .img-bg{
+        transform: translate(0, 25%);
+    }
+}
+
+@include responsive3($ld){
+    .img-bg{
+        transform: translate(0, 32%);
+    }
+}
