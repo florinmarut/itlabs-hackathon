@@ -5,3 +5,20 @@
         padding: 1rem;
     }
 }
+
+.home-footer{
+    background-color: #fff;
+    //background-image: linear-gradient(to bottom, #2C8CB3, #2CAAB3);
+    div, a{
+        color: #000;
+    }
+    a:hover{
+        color: #000;
+    }
+    input{
+        &[type="email"]{
+            border: 2px solid #2C8CB3;
+            border-radius: 5px;
+        }
+    }
+}

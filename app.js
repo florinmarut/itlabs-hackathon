@@ -24,4 +24,8 @@ app.get("/login", (req, res) => {
     res.sendFile(__dirname + "/dist/login.html");
 })
 
+app.get("/register", (req, res) => {
+    res.sendFile(__dirname + "/dist/register.html");
+})
+
 app.listen(PORT, () => {console.log("Listening on port " + PORT)})

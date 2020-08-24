@@ -1643,6 +1643,8 @@ img.responsive {
 }
 
 .video-container {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2C8CB3), to(#2CAAB3));
+  background-image: linear-gradient(to bottom, #2C8CB3, #2CAAB3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1978,6 +1980,23 @@ img.responsive {
   }
 }
 
+.home-footer {
+  background-color: #fff;
+}
+
+.home-footer div, .home-footer a {
+  color: #000;
+}
+
+.home-footer a:hover {
+  color: #000;
+}
+
+.home-footer input[type="email"] {
+  border: 2px solid #2C8CB3;
+  border-radius: 5px;
+}
+
 .wrapper {
   background: #fff;
   font-family: 'Roboto', sans-serif;
@@ -1994,6 +2013,8 @@ img.responsive {
 }
 
 .wrapper .contact-form {
+  background-color: #fff;
+  border: 2px solid black;
   border-radius: 10px;
   padding: 15px;
   margin: 75px auto;
@@ -2034,6 +2055,10 @@ img.responsive {
 
 .wrapper .contact-form .submit-button:hover {
   background-color: #ec7113;
+}
+
+.wrapper .contact-form .submit-button {
+  font-size: 2rem;
 }
 
 .about-hackathon-section {
@@ -2188,6 +2213,17 @@ img.responsive {
   margin: 5rem 5rem 0;
 }
 
+.details-wrapper .event-details-timeline {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2C8CB3), to(#2CAAB3));
+  background-image: linear-gradient(to bottom, #2C8CB3, #2CAAB3);
+  text-align: center;
+}
+
+.details-wrapper .event-details-timeline h1 {
+  color: #fff;
+  text-transform: uppercase;
+}
+
 @media (min-width: 768px) and (max-width: 992px) {
   .img-bg {
     -webkit-transform: translate(0, 25%);
@@ -2213,6 +2249,7 @@ img.responsive {
 }
 
 .login-form {
+  background-color: #fff;
   border: 2px solid black;
   border-radius: 15px;
   font-family: 'Roboto', sans-serif;
