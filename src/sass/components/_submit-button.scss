@@ -10,5 +10,7 @@
     &:hover{
         background-color: #ec7113;
     }
+
+    @content;
 }
 }

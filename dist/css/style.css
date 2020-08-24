@@ -2051,14 +2051,11 @@ img.responsive {
   padding: 15px 50px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+  font-size: 2rem;
 }
 
 .wrapper .contact-form .submit-button:hover {
   background-color: #ec7113;
-}
-
-.wrapper .contact-form .submit-button {
-  font-size: 2rem;
 }
 
 .about-hackathon-section {
@@ -2300,6 +2297,77 @@ img.responsive {
 }
 
 .login-form .submit-button:hover {
+  background-color: #ec7113;
+}
+
+.register-buttons-section {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.register-buttons-section h2 {
+  margin: 25px 0;
+  text-transform: uppercase;
+}
+
+.register-buttons-section .submit-button {
+  background-color: #ed7d26;
+  border: none;
+  color: #fff;
+  margin-top: 15px;
+  padding: 15px 50px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border-radius: 5px;
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 25px auto;
+}
+
+.register-buttons-section .submit-button:hover {
+  background-color: #ec7113;
+}
+
+.register-form {
+  border: 2px solid #000;
+  border-radius: 10px;
+  margin: 25px;
+  text-align: center;
+}
+
+.register-form input, .register-form label {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.register-form input {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.register-form label {
+  text-transform: uppercase;
+  margin-top: 25px;
+}
+
+.register-form .submit-button {
+  background-color: #ed7d26;
+  border: none;
+  color: #fff;
+  margin-top: 15px;
+  padding: 15px 50px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border-radius: 5px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.register-form .submit-button:hover {
   background-color: #ec7113;
 }
 /*# sourceMappingURL=style.css.map */

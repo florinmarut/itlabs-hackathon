@@ -41,9 +41,7 @@
             font-weight: 700;
         }
     
-        @include submit-button;
-
-        .submit-button{
+        @include submit-button{
             font-size: 2rem;
         }
     }

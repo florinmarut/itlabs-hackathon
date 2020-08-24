@@ -28,4 +28,12 @@ app.get("/register", (req, res) => {
     res.sendFile(__dirname + "/dist/register.html");
 })
 
+app.get("/register-alone", (req, res) => {
+    res.sendFile(__dirname + "/dist/register-alone.html");
+})
+
+app.get("/register-team", (req, res) => {
+    res.send("in development");
+})
+
 app.listen(PORT, () => {console.log("Listening on port " + PORT)})
