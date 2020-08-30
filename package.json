@@ -41,8 +41,15 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "jquery": "^3.5.1",
-    "nodemon": "^2.0.4"
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   }
 }

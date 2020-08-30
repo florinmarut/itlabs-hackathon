@@ -2272,18 +2272,8 @@ img.responsive {
   font-size: 2.5rem;
 }
 
-.login-form input[type="checkbox"] {
-  -webkit-transform: scale(2) translate(0, -1px);
-          transform: scale(2) translate(0, -1px);
-}
-
 .login-form label, .login-form a {
   font-size: 2.5rem;
-}
-
-.login-form #remember-checkbox, .login-form label[for*="remember-checkbox"] {
-  display: inline;
-  margin: 25px 5px;
 }
 
 .login-form .submit-button {

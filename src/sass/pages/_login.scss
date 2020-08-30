@@ -33,18 +33,10 @@
         &[type="submit"]{
             font-size: 2.5rem;
         }
-        &[type="checkbox"]{
-            transform: scale(2) translate(0, -1px);
-        }
     }
 
     label, a{
         font-size: 2.5rem;
-    }
-
-    #remember-checkbox, label[for*="remember-checkbox"]{
-        display: inline;
-        margin: 25px 5px;
     }
 
     @include submit-button;
