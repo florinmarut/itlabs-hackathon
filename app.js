@@ -4,10 +4,8 @@ const mysql = require("mysql");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const session = require("express-session");
+const md5 = require("md5");
 const LocalStrategy = require("passport-local").Strategy;
-const flash = require("connect-flash");
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
 const PORT = 3000;
 
 app.use(express.static("dist"));
@@ -17,7 +15,6 @@ app.use(session({
     resave: true,
     saveUninitialized: false
 }));
-app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -40,32 +37,59 @@ connection.connect((err) => {
 
 passport.use(new LocalStrategy({usernameField: "email", passwordField: "password"}, (username, password, done) => {
     console.log("Inside local strategy");
-    connection.query("SELECT * FROM `people` WHERE `email` = " + connection.escape(username), (error, results, fields) => {
+
+    if(!username || !password){
+        return done(null, false, {message: "Wrong username or password."});
+    }
+
+    const RETRIEVE_USER_QUERY = "SELECT * FROM `people` WHERE `email` = " + connection.escape(username);
+    connection.query(RETRIEVE_USER_QUERY, (error, results, fields) => {
         if(error){
-            return done(err);
+            return done(error);
         }
         if(!results.length){
-            return done(null, false, {message: "Incorrect username."});
+            return done(null, false, {message: "Wrong username."});
         }
-        const RETRIEVE_PASSWORD_QUERY = "SELECT `password` FROM `people` WHERE `email` = " + connection.escape(username);
-        connection.query(RETRIEVE_PASSWORD_QUERY, (err, res, fie) => {
-            if(err){
-                return done(err);
-            }
-            bcrypt.compare(password, res[0].password, (e, r) => {
-                if(e){
-                    return done(e);
-                }
-                if(!r){
-                    return done(null, false, {message: "Incorrect password."});
-                }
-                console.log("Welcome boss!");
-            })
-        });
-        console.log("Logged in!");
+
+        if(!(md5(password) === results[0].password)){
+            return done(null, false, {message: "Wrong password."});
+        }
         return done(null, results[0]);
     })
 }));
+
+// passport.use(new LocalStrategy({usernameField: "email", passwordField: "password", passReqToCallback: true}, (username, password, done) => {
+//     console.log("Inside local strategy");
+//     const RETRIEVE_USER_QUERY = "SELECT * FROM `people` WHERE `email` = " + connection.escape(username);
+//     connection.query(RETRIEVE_USER_QUERY, (error, results, fields) => {
+//         if(error){
+//             return done(error);
+//         }
+//         if(!results.length){
+//             return done(null, false, {message: "Incorrect username."});
+//         }
+//         const RETRIEVE_PASSWORD_QUERY = "SELECT `password` FROM `people` WHERE `email` = " + connection.escape(username);
+//         connection.query(RETRIEVE_PASSWORD_QUERY, (err, res, fie) => {
+//             if(err){
+//                 return done(err);
+//             }
+//             if(!res.length){
+//                 return done(null, false, {message: "Incorrect password."});
+//             }
+//             bcrypt.compare(password, res[0].password, (e, r) => {
+//                 if(e){
+//                     return done(e);
+//                 }
+//                 if(!r){
+//                     return done(null, false, {message: "Incorrect password."});
+//                 }
+//                 console.log("Welcome boss!");
+//             })
+//         });
+//         console.log("Logged in!");
+//         return done(null, results[0]);
+//     })
+// }));
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -117,8 +141,9 @@ app.get("/profile", isAuthenticated, (req, res, next) => {
 function isAuthenticated(req, res, next){
     if(req.isAuthenticated()){
         return next();
+    } else{
+        res.redirect("/login");
     }
-    res.redirect("/login");
 }
 
 app.post("/register-alone", (req, res) => {
@@ -131,47 +156,50 @@ app.post("/register-alone", (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    bcrypt.hash(password, saltRounds, (err, hash) => {
-        if(err){
-            console.log(err);
-        }else{
-            const INSERT_QUERY = 'INSERT INTO people VALUES (' + connection.escape(id) + ', ' + 
-            connection.escape(firstName) + ', ' + 
-            connection.escape(lastName) + ', ' + 
-            connection.escape(country) + ', ' +
-            connection.escape(state) + ', ' +
-            connection.escape(city) + ', ' +
-            connection.escape(email) + ', ' + 
-            connection.escape(hash) + ')';
+    const INSERT_QUERY = 'INSERT INTO people VALUES (' + connection.escape(id) + ', ' + 
+    connection.escape(firstName) + ', ' + 
+    connection.escape(lastName) + ', ' + 
+    connection.escape(country) + ', ' +
+    connection.escape(state) + ', ' +
+    connection.escape(city) + ', ' +
+    connection.escape(email) + ', ' + 
+    connection.escape(md5(password)) + ')';
 
-            connection.query(INSERT_QUERY, (err, results, fields) => {
-                if(err){
-                   console.log(err);
-                }else{
-                   console.log("Success at registration!");
-               }
-            })
+    connection.query(INSERT_QUERY, (err, results, fields) => {
+    if(err){
+        console.log(err);
+        }else{
+            console.log("Success at registration!");
         }
-    });
+    })
+
+    // bcrypt.hash(password, saltRounds, (err, hash) => {
+    //     if(err){
+    //         console.log(err);
+    //     }else{
+    //         const INSERT_QUERY = 'INSERT INTO people VALUES (' + connection.escape(id) + ', ' + 
+    //         connection.escape(firstName) + ', ' + 
+    //         connection.escape(lastName) + ', ' + 
+    //         connection.escape(country) + ', ' +
+    //         connection.escape(state) + ', ' +
+    //         connection.escape(city) + ', ' +
+    //         connection.escape(email) + ', ' + 
+    //         connection.escape(hash) + ')';
+
+    //         connection.query(INSERT_QUERY, (err, results, fields) => {
+    //             if(err){
+    //                console.log(err);
+    //             }else{
+    //                console.log("Success at registration!");
+    //            }
+    //         })
+    //     }
+    // });
 })
 
 app.post("/login", passport.authenticate("local", {
     successRedirect: "/profile",
-    failureRedirect: "/login",
-    failureFlash: true
-    }), (req, res) => {
-    // const email = req.body.email;
-    // const password = req.body.password;
-    
-    // const RETRIEVE_USER_QUERY = 'SELECT `password` FROM people WHERE `email`=' + connection.escape(email);
-    
-    // connection.query(RETRIEVE_USER_QUERY, (error, results, fields) => {
-    //     if(error){
-    //         console.log(error);
-    //     }else{
-            
-    //     }
-    // })
+    failureRedirect: "/login"}), (req, res) => {
 })
 
 app.listen(PORT, () => {console.log("Listening on port " + PORT)})
