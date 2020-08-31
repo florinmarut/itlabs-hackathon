@@ -79,15 +79,30 @@
         </ul>
      </nav>
 
-     <div class="register-buttons-section">
-        <h2>How do you wish to register?</h2>
-        <button id="register-alone-btn" class="submit-button">
-           Register alone
-        </button>
-        <button id="register-team-btn" class="submit-button">
-           Register with a team
-        </button>
-     </div>
+     <form class="register-form" action="/register-alone" method="POST">
+        <div class="register-col">
+         <label for="fname">Name</label>
+         <input type="text" id="fname" name="fname" placeholder="First name" required>
+         <input type="text" id="lname" name="lname" placeholder="Last name" required>
+         <label for="country">Country</label>
+         <input type="text" id="country" name="country" required>
+         <label for="state">County or state</label>
+         <input type="text" id="state" name="state" required>
+         <label for="city">City</label>
+         <input type="text" id="city" name="city" required>
+        </div>
+        <div class="register-col">
+         <label for="email">E-mail address</label>
+         <input type="email" id="email" name="email" required>
+         <label for="confirm-email">Confirm e-mail address</label>
+         <input type="email" id="confirm-email" name="confirm-email" required>
+         <label for="password">Password</label>
+         <input type="password" id="password" name="password" required>
+         <label for="password">Confirm password</label>
+         <input type="password" id="confirm-password" name="confirm-password" required>
+         <input type="submit" class="submit-button" name="register" value="Register">
+      </div>
+     </form>
 
      <footer class="footer">
         <div class="row">
@@ -205,23 +220,6 @@
            </div>
         </div>
      </footer>
-
-     <script src="js/bundle.js"></script>
-
-     <script>
-        const registerAloneBtn = document.getElementById("register-alone-btn");
-        const registerTeamBtn = document.getElementById("register-team-btn");
-
-        registerAloneBtn.addEventListener("click", register);
-        registerTeamBtn.addEventListener("click", register);
-
-        function register(event){
-           if(event.target.id === "register-alone-btn"){
-              window.location.href = "/register-alone";
-           } else if(event.target.id === "register-team-btn"){
-              window.location.href = "/register-team";
-           }
-        }
-     </script>
+    <script src="js/bundle.js"></script>
 </body>
 </html>

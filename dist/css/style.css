@@ -2290,35 +2290,6 @@ img.responsive {
   background-color: #ec7113;
 }
 
-.register-buttons-section {
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-}
-
-.register-buttons-section h2 {
-  margin: 25px 0;
-  text-transform: uppercase;
-}
-
-.register-buttons-section .submit-button {
-  background-color: #ed7d26;
-  border: none;
-  color: #fff;
-  margin-top: 15px;
-  padding: 15px 50px;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  border-radius: 5px;
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 25px auto;
-}
-
-.register-buttons-section .submit-button:hover {
-  background-color: #ec7113;
-}
-
 .register-form {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#2C8CB3), to(#2CAAB3));
   background-image: linear-gradient(to bottom, #2C8CB3, #2CAAB3);
@@ -2348,6 +2319,12 @@ img.responsive {
   margin-top: 25px;
 }
 
+.register-form label::after {
+  content: "*";
+  color: red;
+  margin-left: 5px;
+}
+
 .register-form .submit-button {
   background-color: #ed7d26;
   border: none;
@@ -2372,6 +2349,14 @@ img.responsive {
   }
   label {
     text-align: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .register-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 /*# sourceMappingURL=style.css.map */
