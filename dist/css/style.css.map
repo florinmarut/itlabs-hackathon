@@ -29,7 +29,8 @@
         "../../src/sass/pages/_about.scss",
         "../../src/sass/pages/_details.scss",
         "../../src/sass/pages/_login.scss",
-        "../../src/sass/pages/_register.scss"
+        "../../src/sass/pages/_register.scss",
+        "../../src/sass/pages/_profile.scss"
     ],
     "names": [],
     "file": "style.css"

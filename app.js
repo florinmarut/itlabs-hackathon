@@ -58,39 +58,6 @@ passport.use(new LocalStrategy({usernameField: "email", passwordField: "password
     })
 }));
 
-// passport.use(new LocalStrategy({usernameField: "email", passwordField: "password", passReqToCallback: true}, (username, password, done) => {
-//     console.log("Inside local strategy");
-//     const RETRIEVE_USER_QUERY = "SELECT * FROM `people` WHERE `email` = " + connection.escape(username);
-//     connection.query(RETRIEVE_USER_QUERY, (error, results, fields) => {
-//         if(error){
-//             return done(error);
-//         }
-//         if(!results.length){
-//             return done(null, false, {message: "Incorrect username."});
-//         }
-//         const RETRIEVE_PASSWORD_QUERY = "SELECT `password` FROM `people` WHERE `email` = " + connection.escape(username);
-//         connection.query(RETRIEVE_PASSWORD_QUERY, (err, res, fie) => {
-//             if(err){
-//                 return done(err);
-//             }
-//             if(!res.length){
-//                 return done(null, false, {message: "Incorrect password."});
-//             }
-//             bcrypt.compare(password, res[0].password, (e, r) => {
-//                 if(e){
-//                     return done(e);
-//                 }
-//                 if(!r){
-//                     return done(null, false, {message: "Incorrect password."});
-//                 }
-//                 console.log("Welcome boss!");
-//             })
-//         });
-//         console.log("Logged in!");
-//         return done(null, results[0]);
-//     })
-// }));
-
 passport.serializeUser((user, done) => {
     done(null, user.id);
  });
@@ -126,16 +93,8 @@ app.get("/register", (req, res) => {
     res.sendFile(__dirname + "/dist/register.html");
 })
 
-app.get("/register-alone", (req, res) => {
-    res.sendFile(__dirname + "/dist/register-alone.html");
-})
-
-app.get("/register-team", (req, res) => {
-    res.send("in development");
-})
-
 app.get("/profile", isAuthenticated, (req, res, next) => {
-    res.send("In development...");
+    res.sendFile(__dirname + "/dist/profile.html");
 })
 
 function isAuthenticated(req, res, next){
@@ -146,55 +105,51 @@ function isAuthenticated(req, res, next){
     }
 }
 
-app.post("/register-alone", (req, res) => {
+app.post("/register", (req, res) => {
     const id = (Math.random() * 100) + 1;
     const firstName = req.body.fname;
     const lastName= req.body.lname;
     const country = req.body.country;
     const state = req.body.state;
     const city = req.body.city;
+    const phone = req.body.phone;
     const email = req.body.email;
     const password = req.body.password;
+    const confirmedPassword = req.body.confirmPassword;
 
-    const INSERT_QUERY = 'INSERT INTO people VALUES (' + connection.escape(id) + ', ' + 
-    connection.escape(firstName) + ', ' + 
-    connection.escape(lastName) + ', ' + 
-    connection.escape(country) + ', ' +
-    connection.escape(state) + ', ' +
-    connection.escape(city) + ', ' +
-    connection.escape(email) + ', ' + 
-    connection.escape(md5(password)) + ')';
-
-    connection.query(INSERT_QUERY, (err, results, fields) => {
-    if(err){
-        console.log(err);
+    const CHECK_IF_USER_REGISTERED_QUERY = "SELECT * FROM `people` WHERE `email` = " + connection.escape(email);
+    connection.query(CHECK_IF_USER_REGISTERED_QUERY, (error, results, fields) => {
+        if(error){
+            console.log(error);
         }else{
-            console.log("Success at registration!");
+            if(!results.length){
+                console.log("User doesn't exist, registering...");
+                if(password === confirmedPassword){
+                    const INSERT_QUERY = 'INSERT INTO people VALUES (' + connection.escape(id) + ', ' + 
+                    connection.escape(firstName) + ', ' + 
+                    connection.escape(lastName) + ', ' + 
+                    connection.escape(country) + ', ' +
+                    connection.escape(state) + ', ' +
+                    connection.escape(city) + ', ' +
+                    connection.escape(phone) + ', ' +
+                    connection.escape(email) + ', ' + 
+                    connection.escape(md5(password)) + ')';
+            
+                    connection.query(INSERT_QUERY, (err, results, fields) => {
+                    if(err){
+                        console.log(err);
+                    }else{
+                        console.log("Success at registration!");
+                    }
+                })
+                } else{
+                    console.log("Passwords don't match or user already exists");
+                }
+            }else{
+                console.log("User exists");
+            }
         }
-    })
-
-    // bcrypt.hash(password, saltRounds, (err, hash) => {
-    //     if(err){
-    //         console.log(err);
-    //     }else{
-    //         const INSERT_QUERY = 'INSERT INTO people VALUES (' + connection.escape(id) + ', ' + 
-    //         connection.escape(firstName) + ', ' + 
-    //         connection.escape(lastName) + ', ' + 
-    //         connection.escape(country) + ', ' +
-    //         connection.escape(state) + ', ' +
-    //         connection.escape(city) + ', ' +
-    //         connection.escape(email) + ', ' + 
-    //         connection.escape(hash) + ')';
-
-    //         connection.query(INSERT_QUERY, (err, results, fields) => {
-    //             if(err){
-    //                console.log(err);
-    //             }else{
-    //                console.log("Success at registration!");
-    //            }
-    //         })
-    //     }
-    // });
+    });
 })
 
 app.post("/login", passport.authenticate("local", {
