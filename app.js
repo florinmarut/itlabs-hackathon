@@ -105,8 +105,11 @@ function isAuthenticated(req, res, next){
     }
 }
 
+app.get("/partners", (req, res) => {
+    res.sendFile(__dirname + "/dist/partners.html");
+})
+
 app.post("/register", (req, res) => {
-    const id = (Math.random() * 100) + 1;
     const firstName = req.body.fname;
     const lastName= req.body.lname;
     const country = req.body.country;
@@ -125,7 +128,7 @@ app.post("/register", (req, res) => {
             if(!results.length){
                 console.log("User doesn't exist, registering...");
                 if(password === confirmedPassword){
-                    const INSERT_QUERY = 'INSERT INTO people VALUES (' + connection.escape(id) + ', ' + 
+                    const INSERT_QUERY = 'INSERT INTO people (firstname, lastname, country, state, city, phone, email, password) VALUES (' +
                     connection.escape(firstName) + ', ' + 
                     connection.escape(lastName) + ', ' + 
                     connection.escape(country) + ', ' +
