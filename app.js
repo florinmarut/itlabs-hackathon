@@ -6,7 +6,6 @@ const passport = require("passport");
 const session = require("express-session");
 const md5 = require("md5");
 const LocalStrategy = require("passport-local").Strategy;
-const PORT = 3000;
 
 app.use(express.static("dist"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -21,7 +20,7 @@ app.use(passport.session());
 const connection = mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"7EX9m841iWW2Yz",
+    password:"",
     database:"testschema",
     multipleStatements: true
 });
@@ -160,4 +159,4 @@ app.post("/login", passport.authenticate("local", {
     failureRedirect: "/login"}), (req, res) => {
 })
 
-app.listen(PORT, () => {console.log("Listening on port " + PORT)})
+app.listen(process.env.PORT || 3000, () => {console.log("Listening on server's port.")})

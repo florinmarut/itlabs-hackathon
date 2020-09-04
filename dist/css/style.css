@@ -2395,6 +2395,19 @@ img.responsive {
   z-index: -1;
 }
 
+@media (min-width: 992px) {
+  .course-image {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .course-image {
+    -webkit-transform: translateY(-300px);
+            transform: translateY(-300px);
+  }
+}
+
 .partners-cardboard {
   background-color: #fff;
   border-radius: 5px;

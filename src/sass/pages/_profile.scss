@@ -33,3 +33,15 @@
     position: absolute;
     z-index: -1;
 }
+
+@include responsive3($ld){
+    .course-image{
+        width: 100%;
+    }
+}
+
+@include responsive3($xd){
+    .course-image{
+        transform: translateY(-300px);
+    }
+}
